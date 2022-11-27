@@ -1,7 +1,7 @@
 let pos = 0;
 const pacArray = [
-  ['./images/PacMan1.png', './images/PacMan2.png'],
-  ['./images/PacMan3.png', './images/PacMan4.png'],
+  ['/images/PacMan1.png', '/images/PacMan2.png'],
+  ['/images/PacMan3.png', '/images/PacMan4.png'],
 ];
 let direction = 0;
 const pacMen = []; // This array holds all the pacmen
@@ -27,10 +27,9 @@ function makePac() {
   newimg.src = './images/PacMan1.png';
   newimg.width = 100;
 
-  // TODO: set position here
   newimg.style.left = position.x;
   newimg.style.top = position.y;
-  // TODO add new Child image to game
+
   game.appendChild(newimg);
 
   // return details in an object
@@ -55,7 +54,6 @@ function update() {
 }
 
 function checkCollisions(item) {
-  // TODO: detect collision with all walls and make pacman bounce
     if (
     item.position.x + item.velocity.x + item.newimg.width > window.innerWidth ||
     item.position.x + item.velocity.x < 0
